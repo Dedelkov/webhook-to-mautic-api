@@ -6,7 +6,7 @@ RUN apt-get update
 
 RUN apt-get install software-properties-common -y
 
-RUN apt-get install sudo build-essential tcl8.5 zlib1g-dev libicu-dev g++ -y
+RUN apt-get install sudo build-essential zlib1g-dev libicu-dev g++ -y
 
 RUN apt-get install -y \
   curl \
