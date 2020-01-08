@@ -19,15 +19,12 @@ RUN apt-get install -y \
   libcurl4-openssl-dev \
   libssl-dev \
   bzip2 \
-  csstidy \
-  libfreetype6-dev \
   libicu-dev \
   libldap2-dev \
   libmemcached-dev \
   libxml2-dev \
   libz-dev \
   tidy \
-  libapache2-modsecurity \
   wget \
   nano \
   htop \
