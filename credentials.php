@@ -19,7 +19,7 @@ header("Pragma: no-cache");
 header("Cache-Control: no-cache, must-revalidate");
 
 // Coloque aqui a sua chave de segurança
-$secure = "25dgdg437257ddg28672dg357686";
+$secure = getenv('MAUTIC_URL');
 
 // Se a chave não for informada ou esteja incorreta
 // interrompe o script imediatamente
