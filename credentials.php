@@ -45,8 +45,3 @@ $credentials  = array(
   'userName'   => $_ENV['MAUTIC_USER'],
   'password'   => $_ENV['MAUTIC_PASSWORD']
 );
-
-if ($debug){
-  var_dump($credentials);
-  die();
-}

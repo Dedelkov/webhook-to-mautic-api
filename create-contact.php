@@ -15,6 +15,7 @@
 include __DIR__ . '/vendor/autoload.php';
 use Mautic\Auth\ApiAuth;
 use Mautic\MauticApi;
+
 session_start();
 
 include "credentials.php";
