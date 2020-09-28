@@ -38,6 +38,24 @@ $payload = json_decode($request_body);
 
 $mautic_data = array();
 
+
+$response = $contactApi->getList( "email:$payload->Email" );
+$json = json_encode( $response );
+$decodedJson = json_decode( $json, true );
+$mautic_data  = array();
+
+foreach( $decodedJson as $lista ) {
+	
+ 	foreach( $decodedJson["contacts"] as $listaTotal ) {
+
+       $id  =  $listaTotal["id"];
+
+    break;
+  }
+  
+  break;
+}
+
 // coloque todos os dados que você quer atualizar aqui
 $mautic_data["email"]         =    $payload->Email;  // customize a variavel
 $mautic_data["firstname"]     =    $payload->Nome;    // customize a variavel
