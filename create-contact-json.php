@@ -39,9 +39,9 @@ $payload = json_decode($request_body);
 $mautic_data = array();
 
 // coloque todos os dados que você quer atualizar aqui
-$mautic_data["email"]         =    $payload['Email'];  // customize a variavel
-$mautic_data["firstname"]     =    $payload['Nome'];    // customize a variavel
-$mautic_data["tags"] = explode(",", $payload['tags']);
+$mautic_data["email"]         =    $payload->Email;  // customize a variavel
+$mautic_data["firstname"]     =    $payload->Nome;    // customize a variavel
+$mautic_data["tags"] = explode(",", $payload->Tag);
 
 // Permite criar um novo contato caso o contato especificado não seja encontrado
 $createIfNotFound = true;
