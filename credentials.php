@@ -19,7 +19,7 @@ header("Pragma: no-cache");
 header("Cache-Control: no-cache, must-revalidate");
 
 // Coloque aqui a sua chave de segurança
-$secure = getenv('MAUTIC_KEY');
+$secure = $_ENV['MAUTIC_KEY'];
 
 // Se a chave não for informada ou esteja incorreta
 // interrompe o script imediatamente
@@ -36,6 +36,6 @@ $mauticUrl    = getenv('MAUTIC_URL');
 
 // login do Basic Authentication (crie um usuário ou utilize um existente)
 $credentials  = array(
-  'userName'   => getenv('MAUTIC_USER'),
-  'password'   => getenv('MAUTIC_PASSWORD')
+  'userName'   => $_ENV['MAUTIC_USER'],
+  'password'   => $_ENV['MAUTIC_PASSWORD']
 );
