@@ -32,7 +32,7 @@ else:
 endif;
 
 // a url do seu mautic
-$mauticUrl    = getenv('MAUTIC_URL');
+$mauticUrl    = $_ENV['MAUTIC_URL'];
 
 // login do Basic Authentication (crie um usuário ou utilize um existente)
 $credentials  = array(
