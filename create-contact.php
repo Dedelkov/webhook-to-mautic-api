@@ -64,4 +64,4 @@ $createIfNotFound = true;
 $contact = $contactApi->edit($id, $mautic_data, $createIfNotFound);
 
 // finalizado
-json_encode($contact);
+echo json_encode($contact);
