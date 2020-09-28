@@ -30,32 +30,15 @@ $api = new MauticApi();
 // Nova instância do objeto Contact
 $contactApi = $api->newApi('contacts', $auth, $mauticUrl);
 
-// Pesquisa o contato pelo e-mail
-// "email:luiz@powertic.com"
-$email = $_POST['email'];
-$response = $contactApi->getList("email:$email");
-$json = json_encode($response);
-$decodedJson = json_decode($json, true);
-
 $id = 0;
+
 $mautic_data = array();
 
-foreach($decodedJson as $lista)
-{
- 	foreach($decodedJson["contacts"] as $listaTotal)
-  {
-    // captura o id do contato caso seja encontrado
-    $id                           =     $listaTotal["id"];
-    // carrega todos os dados existentes do contato
-    $mautic_data                  =     $listaTotal["fields"]["all"];
-    // coloque todos os dados que você quer atualizar aqui
-    $mautic_data["email"]         =    $_POST['email'];  // customize a variavel
-    $mautic_data["firstname"]     =    $_POST['name'];    // customize a variavel
-    $mautic_data["phone"]		      =    $_POST['phone'];    // customize a variavel
-    break;
-  }
-  break;
-}
+// coloque todos os dados que você quer atualizar aqui
+$mautic_data["email"]         =    $_POST['email'];  // customize a variavel
+$mautic_data["firstname"]     =    $_POST['name'];    // customize a variavel
+$mautic_data["phone"]		      =    $_POST['phone'];    // customize a variavel
+
 
 // Permite criar um novo contato caso o contato especificado não seja encontrado
 $createIfNotFound = true;
