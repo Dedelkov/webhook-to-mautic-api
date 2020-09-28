@@ -21,6 +21,12 @@ header("Cache-Control: no-cache, must-revalidate");
 // Coloque aqui a sua chave de segurança
 $secure = $_ENV['MAUTIC_KEY'];
 
+if (!(empty($_REQUEST["key"]))) :
+  $debug = true;
+else:
+  $debug = false;
+endif;
+
 // Se a chave não for informada ou esteja incorreta
 // interrompe o script imediatamente
 if (!(empty($_REQUEST["key"]))) :
@@ -39,3 +45,8 @@ $credentials  = array(
   'userName'   => $_ENV['MAUTIC_USER'],
   'password'   => $_ENV['MAUTIC_PASSWORD']
 );
+
+if ($debug){
+  var_dump($credentials);
+  die();
+}
