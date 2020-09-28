@@ -32,10 +32,10 @@ else:
 endif;
 
 // a url do seu mautic
-$mauticUrl    = "https://mkt.powertic.com";
+$mauticUrl    = getenv('MAUTIC_URL');
 
 // login do Basic Authentication (crie um usuário ou utilize um existente)
 $credentials  = array(
-  'userName'   => $_POST["mautic_usr"],
-  'password'   => $_POST["mautic_pwd"]
+  'userName'   => getenv('MAUTIC_USER'),
+  'password'   => getenv('MAUTIC_PASSWORD')
 );
